@@ -1,0 +1,22 @@
+main {
+  min-height: 100vh;
+  background: #ffe259;
+  background: -webkit-linear-gradient(to right, #ffa751, #ffe259);
+  background: linear-gradient(to right, #ffa751, #ffe259);
+}
+.container {
+  width: 50%;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+button {
+  padding: 1%;
+  width: inherit;
+}
+
+.card {
+  box-shadow: 1px 10px 29px -9px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 1px 10px 29px -9px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 10px 29px -9px rgba(0, 0, 0, 0.75);
+}

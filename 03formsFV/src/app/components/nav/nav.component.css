@@ -1,0 +1,18 @@
+nav {
+  min-width: 100vw;
+}
+
+.navbar-brand {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-style: italic;
+}
+
+.navbar-brand,
+.navbar-text {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+
+img {
+  filter: invert();
+}

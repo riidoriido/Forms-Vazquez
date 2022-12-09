@@ -1,0 +1,98 @@
+<main>
+  <div class="container">
+    <div class="card bg-dark">
+      <div class="card-body text-light">
+        <h5 class="card-title">Subscribirse al newsletter!</h5>
+        <form
+          [formGroup]="newsletterForm"
+          class="row g-4"
+          (ngSubmit)="onSubmit()"
+        >
+          <div class="col-6">
+            <label class="form-label" for="nombre">Nombre</label>
+            <input
+              [formControl]="nombreControl"
+              class="form-control"
+              type="text"
+              placeholder="Tu nombre"
+            />
+            <app-errorhelper [control]="nombreControl"></app-errorhelper>
+          </div>
+          <div class="col-6">
+            <label class="form-label" for="apellido">Apellido</label>
+            <input
+              [formControl]="apellidoControl"
+              class="form-control"
+              type="text"
+              placeholder="Tu Apellido"
+            />
+            <app-errorhelper [control]="apellidoControl"></app-errorhelper>
+          </div>
+          <div class="">
+            <label class="form-label" for="mail">Correo Electrónico</label>
+            <input
+              [formControl]="mailControl"
+              class="form-control"
+              type="email"
+              placeholder="mail@ejemplo.com"
+            />
+            <app-errorhelper [control]="mailControl"></app-errorhelper>
+          </div>
+
+          <div class="col-12">
+            <button
+              [disabled]="newsletterForm.invalid"
+              class="btn btn-outline-warning"
+              type="submit"
+            >
+              Subscribirme!
+            </button>
+          </div>
+          <p>
+            <button
+              class="btn btn-outline-warning"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseWidthExample"
+              aria-expanded="false"
+              aria-controls="collapseWidthExample"
+            >
+              Test
+            </button>
+          </p>
+          <div>
+            <div class="collapse collapse-horizontal" id="collapseWidthExample">
+              <table class="table table-dark">
+                <thead>
+                  <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Mail</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{{ nombreControl.value }}</td>
+                    <td>{{ apellidoControl.value }}</td>
+                    <td>{{ mailControl.value }}</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="text-danger d-flex g-5">
+                <span class="g-3" *ngIf="nombreControl.errors != null">{{
+                  nombreControl.errors | json
+                }}</span>
+                <span class="g-3" *ngIf="apellidoControl.errors != null">{{
+                  apellidoControl.errors | json
+                }}</span>
+                <span class="g-3" *ngIf="mailControl.errors != null">{{
+                  mailControl.errors | json
+                }}</span>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
